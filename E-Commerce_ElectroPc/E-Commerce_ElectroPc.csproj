@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ElectroPc_DataAccess\ElectroPc_DataAccess.csproj" />
+    <ProjectReference Include="..\ElectroPc_Services\ElectroPc_Services.csproj" />
   </ItemGroup>
 
 </Project>
