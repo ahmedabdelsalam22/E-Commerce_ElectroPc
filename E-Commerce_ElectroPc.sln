@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectroPc_Utility", "Electr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPc_DataAccess", "ElectroPc_DataAccess\ElectroPc_DataAccess.csproj", "{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPc_Services", "ElectroPc_Services\ElectroPc_Services.csproj", "{3360FE07-4E82-4909-B4C8-C0D33DE17868}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3360FE07-4E82-4909-B4C8-C0D33DE17868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3360FE07-4E82-4909-B4C8-C0D33DE17868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3360FE07-4E82-4909-B4C8-C0D33DE17868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3360FE07-4E82-4909-B4C8-C0D33DE17868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
