@@ -2,6 +2,7 @@ using ElectroPc_DataAccess;
 using ElectroPc_Services.IRepositories;
 using ElectroPc_Services.Repositories;
 using ElectroPc_Services.UnitOfWork;
+using ElectroPc_Utility;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServe
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 var app = builder.Build();
 
