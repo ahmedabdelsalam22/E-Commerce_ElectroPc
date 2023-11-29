@@ -55,7 +55,6 @@ namespace E_Commerce_ElectroPc.Controllers
             {
                 if (ModelState.IsValid)
                 {
-
                     string wwwRootPath = _hostEnvironment.WebRootPath;
                     if (file != null)
                     {
