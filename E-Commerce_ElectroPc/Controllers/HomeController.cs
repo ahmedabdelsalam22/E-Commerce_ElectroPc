@@ -1,4 +1,8 @@
+using AutoMapper;
 using E_Commerce_ElectroPc.Models;
+using ElectroPc_Models.Dtos;
+using ElectroPc_Models;
+using ElectroPc_Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +10,21 @@ namespace E_Commerce_ElectroPc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _logger = logger;
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<Product> products = await _unitOfWork.productRepository.GetAllAsync();
+
+            IEnumerable<ProductDto> productDtos = _mapper.Map<List<ProductDto>>(products);
+
+            return View(productDtos);
         }
 
         public IActionResult Privacy()

@@ -12,11 +12,13 @@ namespace E_Commerce_ElectroPc.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ProductController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductController(IUnitOfWork unitOfWork, IMapper mapper, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _hostEnvironment = hostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -29,6 +31,7 @@ namespace E_Commerce_ElectroPc.Controllers
 
         public async Task<IActionResult> Upsert(int? id)
         {
+
             if (id == null || id == 0)
             {
                 // Create 
@@ -46,12 +49,37 @@ namespace E_Commerce_ElectroPc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upsert(ProductDto productDto)
+        public async Task<IActionResult> Upsert(ProductDto productDto, IFormFile? file)
         {
             if (productDto.ProductId == 0 || productDto.ProductId == null)
             {
                 if (ModelState.IsValid)
                 {
+
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    if (file != null)
+                    {
+                        string fileName = Guid.NewGuid().ToString();
+                        var uploads = Path.Combine(wwwRootPath, @"images\products");
+                        var extension = Path.GetExtension(file.FileName);
+
+                        if (productDto.ImageUrl != null)
+                        {
+                            var oldImagePath = Path.Combine(wwwRootPath, productDto.ImageUrl.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldImagePath))
+                            {
+                                System.IO.File.Delete(oldImagePath);
+                            }
+                        }
+
+                        using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                        {
+                            file.CopyTo(fileStreams);
+                        }
+                        productDto.ImageUrl = @"\images\products\" + fileName + extension;
+
+                    }
+
                     Product product = _mapper.Map<Product>(productDto);
 
                     await _unitOfWork.productRepository.CreateAsync(product);
@@ -77,11 +105,17 @@ namespace E_Commerce_ElectroPc.Controllers
             {
                 return BadRequest();
             }
+
+
             var obj = await _unitOfWork.productRepository.GetAsync(u => u.ProductId == id);
 
+            var oldImagePath = Path.Combine(_hostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
             await _unitOfWork.productRepository.Remove(obj);
             return RedirectToAction("Index");
-
         }
     }
 }
