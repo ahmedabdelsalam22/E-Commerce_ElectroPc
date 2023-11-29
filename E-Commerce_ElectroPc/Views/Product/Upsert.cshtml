@@ -3,8 +3,7 @@
 
 <form method="post" enctype="multipart/form-data">
     <input asp-for="ProductId" hidden />
-    <div class="row">
-        <div class="col-10">
+        <div class="col-12">
             <div class="border p-3 mt-4 row">
                 <div class="m-1">
                     <label asp-for="Name"></label>
@@ -69,6 +68,7 @@
                 <div class="mb-3">
                     <label asp-for="ImageUrl"></label>
                     <input type="file" id="uploadBox" name="file" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
                 </div>
 
                 <div class="m-1">
@@ -90,10 +90,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-2 p-4">
-            <img src="@Model.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
-        </div>
-    </div>
 </form>
 
 @section scripts{
