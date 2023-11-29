@@ -46,6 +46,9 @@
                     <td>@m.StorageType</td>
                     <td>@m.WeightKg</td>
                     <td>@m.Dimensions</td>
+                    <td>
+                        <img src="@m.ImageUrl" alt="app" width="50" height="50">
+                    </td>
                     <td width="10%">
                         <a asp-action="Upsert" class="btn btn-primary" asp-route-id="@m.ProductId">
                             <i class="bi bi-pencil-square"></i> &nbsp; Update

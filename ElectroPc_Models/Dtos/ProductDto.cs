@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace ElectroPc_Models.Dtos
         public double BatteryLifeHours { get; set; }
         public double WeightKg { get; set; }
         public string Dimensions { get; set; }
+        [ValidateNever]
         public string ImageUrl { get; set; }
     }
 }

@@ -14,7 +14,6 @@ namespace E_Commerce_ElectroPc.Controllers
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _hostEnvironment;
 
-
         public ProductController(IUnitOfWork unitOfWork, IMapper mapper, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;

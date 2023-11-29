@@ -1,86 +1,98 @@
 ﻿@using ElectroPc_Models.Dtos;
 @model ProductDto
 
-
-
 <form method="post" enctype="multipart/form-data">
     <input asp-for="ProductId" hidden />
-    <div class="m-1">
-        <label asp-for="Name"></label>
-        <input type="text" asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="Brand"></label>
-        <input type="text" asp-for="Brand" class="form-control" />
-        <span asp-validation-for="Brand" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="Processor"></label>
-        <input type="text" asp-for="Processor" class="form-control" />
-        <span asp-validation-for="Processor" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="RamSizeGB"></label>
-        <input type="number" asp-for="RamSizeGB" class="form-control" />
-        <span asp-validation-for="RamSizeGB" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="StorageType"></label>
-        <input type="text" asp-for="StorageType" class="form-control" />
-        <span asp-validation-for="StorageType" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="StorageCapacityGB"></label>
-        <input type="number" asp-for="StorageCapacityGB" class="form-control" />
-        <span asp-validation-for="StorageCapacityGB" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="StorageType"></label>
-        <input type="text" asp-for="StorageType" class="form-control" />
-        <span asp-validation-for="StorageType" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="DisplaySizeInches"></label>
-        <input type="number" asp-for="DisplaySizeInches" class="form-control" />
-        <span asp-validation-for="DisplaySizeInches" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="DisplayResolution"></label>
-        <input type="text" asp-for="DisplayResolution" class="form-control" />
-        <span asp-validation-for="DisplayResolution" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="GraphicsCard"></label>
-        <input type="text" asp-for="GraphicsCard" class="form-control" />
-        <span asp-validation-for="GraphicsCard" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="OperatingSystem"></label>
-        <input type="text" asp-for="OperatingSystem" class="form-control" />
-        <span asp-validation-for="OperatingSystem" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="BatteryLifeHours"></label>
-        <input type="number" asp-for="BatteryLifeHours" class="form-control" />
-        <span asp-validation-for="BatteryLifeHours" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="WeightKg"></label>
-        <input type="number" asp-for="WeightKg" class="form-control" />
-        <span asp-validation-for="WeightKg" class="text-danger"></span>
-    </div>
-    <div class="m-1">
-        <label asp-for="Dimensions"></label>
-        <input type="text" asp-for="Dimensions" class="form-control" />
-        <span asp-validation-for="Dimensions" class="text-danger"></span>
-    </div>
-    
-    <div class="col-6">
-         <button type="submit" class="btn btn-primary" style="width:150px">Save</button>
-        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
-            Back To List
-        </a>
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 mt-4 row">
+                <div class="m-1">
+                    <label asp-for="Name"></label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="Brand"></label>
+                    <input type="text" asp-for="Brand" class="form-control" />
+                    <span asp-validation-for="Brand" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="Processor"></label>
+                    <input type="text" asp-for="Processor" class="form-control" />
+                    <span asp-validation-for="Processor" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="RamSizeGB"></label>
+                    <input type="number" asp-for="RamSizeGB" class="form-control" />
+                    <span asp-validation-for="RamSizeGB" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="StorageType"></label>
+                    <input type="text" asp-for="StorageType" class="form-control" />
+                    <span asp-validation-for="StorageType" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="StorageCapacityGB"></label>
+                    <input type="number" asp-for="StorageCapacityGB" class="form-control" />
+                    <span asp-validation-for="StorageCapacityGB" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="StorageType"></label>
+                    <input type="text" asp-for="StorageType" class="form-control" />
+                    <span asp-validation-for="StorageType" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="DisplaySizeInches"></label>
+                    <input type="number" asp-for="DisplaySizeInches" class="form-control" />
+                    <span asp-validation-for="DisplaySizeInches" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="DisplayResolution"></label>
+                    <input type="text" asp-for="DisplayResolution" class="form-control" />
+                    <span asp-validation-for="DisplayResolution" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="GraphicsCard"></label>
+                    <input type="text" asp-for="GraphicsCard" class="form-control" />
+                    <span asp-validation-for="GraphicsCard" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="OperatingSystem"></label>
+                    <input type="text" asp-for="OperatingSystem" class="form-control" />
+                    <span asp-validation-for="OperatingSystem" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="BatteryLifeHours"></label>
+                    <input type="number" asp-for="BatteryLifeHours" class="form-control" />
+                    <span asp-validation-for="BatteryLifeHours" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl"></label>
+                    <input type="file" id="uploadBox" name="file" class="form-control" />
+                </div>
+
+                <div class="m-1">
+                    <label asp-for="WeightKg"></label>
+                    <input type="number" asp-for="WeightKg" class="form-control" />
+                    <span asp-validation-for="WeightKg" class="text-danger"></span>
+                </div>
+                <div class="m-1">
+                    <label asp-for="Dimensions"></label>
+                    <input type="text" asp-for="Dimensions" class="form-control" />
+                    <span asp-validation-for="Dimensions" class="text-danger"></span>
+                </div>
+
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary" style="width:150px">Save</button>
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                        Back To List
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 p-4">
+            <img src="@Model.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+        </div>
     </div>
 </form>
 
