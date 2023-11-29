@@ -25,5 +25,6 @@ namespace ElectroPc_Models.Dtos
         public double WeightKg { get; set; }
         public string Dimensions { get; set; }
         public string ImageUrl { get; set; }
+        public double Price { get; set; }
     }
 }

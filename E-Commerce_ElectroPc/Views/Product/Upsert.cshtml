@@ -36,6 +36,11 @@
                     <span asp-validation-for="StorageCapacityGB" class="text-danger"></span>
                 </div>
                 <div class="m-1">
+                    <label asp-for="Price"></label>
+                    <input type="number" asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="m-1">
                     <label asp-for="StorageType"></label>
                     <input type="text" asp-for="StorageType" class="form-control" />
                     <span asp-validation-for="StorageType" class="text-danger"></span>

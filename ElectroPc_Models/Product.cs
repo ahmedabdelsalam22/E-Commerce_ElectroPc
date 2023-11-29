@@ -27,5 +27,7 @@ namespace ElectroPc_Models
         public string Dimensions { get; set; }
         [ValidateNever]
         public string ImageUrl { get; set; }
+        public double Price { get; set; }
+
     }
 }
