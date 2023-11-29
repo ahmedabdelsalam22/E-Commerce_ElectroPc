@@ -31,8 +31,6 @@
                 <th>StorageType</th>
                 <th>WeightKg</th>
                 <th>Dimensions</th>
-                <th>IsTouchscreen</th>
-                <th>HasWebcam</th>
                 <th width="10%">Update</th>
                 <th width="10%">Delete</th>
             </tr>
@@ -48,8 +46,6 @@
                     <td>@m.StorageType</td>
                     <td>@m.WeightKg</td>
                     <td>@m.Dimensions</td>
-                    <td>@m.IsTouchscreen</td>
-                    <td>@m.HasWebcam</td>
                     <td width="10%">
                         <a asp-action="Upsert" class="btn btn-primary" asp-route-id="@m.ProductId">
                             <i class="bi bi-pencil-square"></i> &nbsp; Update
