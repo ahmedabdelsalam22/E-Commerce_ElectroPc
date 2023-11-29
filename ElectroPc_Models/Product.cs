@@ -24,5 +24,6 @@ namespace ElectroPc_Models
         public double BatteryLifeHours { get; set; }
         public double WeightKg { get; set; }
         public string Dimensions { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
