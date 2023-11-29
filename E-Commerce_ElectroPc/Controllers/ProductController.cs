@@ -4,6 +4,7 @@ using ElectroPc_Models.Dtos;
 using ElectroPc_Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Hosting;
 
 namespace E_Commerce_ElectroPc.Controllers
 {
@@ -54,7 +55,6 @@ namespace E_Commerce_ElectroPc.Controllers
                     Product product = _mapper.Map<Product>(productDto);
 
                     await _unitOfWork.productRepository.CreateAsync(product);
-                    TempData["success"] = "Product Created Successfully";
                     return RedirectToAction("Index");
                 }
             }
@@ -66,10 +66,22 @@ namespace E_Commerce_ElectroPc.Controllers
                 }
                 Product productToDb = _mapper.Map<Product>(productDto);
                await _unitOfWork.productRepository.Update(productToDb);
-                TempData["success"] = "product updated successfully";
                 return RedirectToAction("Index");
             }
             return View(productDto);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return BadRequest();
+            }
+            var obj = await _unitOfWork.productRepository.GetAsync(u => u.ProductId == id);
+
+            await _unitOfWork.productRepository.Remove(obj);
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ElectroPc_Models.Dtos
 {
     public class ProductDto
     {
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Processor { get; set; }
