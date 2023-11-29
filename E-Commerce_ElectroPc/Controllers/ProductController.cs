@@ -26,7 +26,6 @@ namespace E_Commerce_ElectroPc.Controllers
             return View(productDtos);
         }
 
-        [HttpGet]
         public async Task<IActionResult> Upsert(int? id)
         {
             if (id == null || id == 0)
@@ -46,7 +45,7 @@ namespace E_Commerce_ElectroPc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upsert(ProductDto productDto, IFormFile? file)
+        public async Task<IActionResult> Upsert(ProductDto productDto)
         {
             if (productDto.ProductId == 0 || productDto.ProductId == null)
             {

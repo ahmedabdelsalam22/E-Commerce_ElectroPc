@@ -76,9 +76,18 @@
         <span asp-validation-for="Dimensions" class="text-danger"></span>
     </div>
     
-    <div class="mt-2 m-1">
-        <button type="submit" asp-action="Upsert" class="btn btn-primary">Create</button>
-        <button asp-action="Index" class="btn btn-secondary">Back</button>
+    <div class="col-6">
+        @if (Model.ProductId != 0)
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        }
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back To List
+        </a>
     </div>
 </form>
 
