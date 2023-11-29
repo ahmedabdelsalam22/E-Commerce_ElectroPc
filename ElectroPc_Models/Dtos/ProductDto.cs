@@ -8,7 +8,7 @@ namespace ElectroPc_Models.Dtos
 {
     public class ProductDto
     {
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Processor { get; set; }
@@ -22,7 +22,5 @@ namespace ElectroPc_Models.Dtos
         public double BatteryLifeHours { get; set; }
         public double WeightKg { get; set; }
         public string Dimensions { get; set; }
-        public bool IsTouchscreen { get; set; }
-        public bool HasWebcam { get; set; } 
     }
 }

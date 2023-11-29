@@ -13,7 +13,7 @@ namespace ElectroPc_Utility
     {
         public MappingConfig()
         {
-            CreateMap<Product,ProductDto>();
+            CreateMap<Product,ProductDto>().ReverseMap();
         }
     }
 }

@@ -23,6 +23,7 @@ namespace ElectroPc_Services.Repositories
         public async Task CreateAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync(bool tracked = true)
@@ -49,9 +50,11 @@ namespace ElectroPc_Services.Repositories
             return await query.FirstOrDefaultAsync();
         }
 
-        public void Remove(T entity)
+        public async Task Remove(T entity)
         {
             _dbSet.Remove(entity);
+            await _dbContext.SaveChangesAsync();
+
         }
     }
 }

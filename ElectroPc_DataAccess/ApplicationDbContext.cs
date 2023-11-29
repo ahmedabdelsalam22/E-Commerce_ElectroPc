@@ -37,8 +37,6 @@ namespace ElectroPc_DataAccess
                     BatteryLifeHours = 6.5,
                     WeightKg = 1.8,
                     Dimensions = "15 x 10 x 1 inches",
-                    IsTouchscreen = true,
-                    HasWebcam = true
                 },
                 new Product
                 {
@@ -56,8 +54,6 @@ namespace ElectroPc_DataAccess
                     BatteryLifeHours = 8,
                     WeightKg = 2,
                     Dimensions = "13 x 9 x 1 inches",
-                    IsTouchscreen = false,
-                    HasWebcam = true
                 }
             );
         }

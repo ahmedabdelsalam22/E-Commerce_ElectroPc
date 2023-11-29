@@ -17,9 +17,10 @@ namespace ElectroPc_Services.Repositories
             _dbContext = dbContext;
         }
 
-        public void Update(Product product)
+        public async Task Update(Product product)
         {
             _dbContext.Update(product);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
