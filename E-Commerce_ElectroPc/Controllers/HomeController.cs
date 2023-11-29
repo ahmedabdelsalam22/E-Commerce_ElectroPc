@@ -27,6 +27,14 @@ namespace E_Commerce_ElectroPc.Controllers
             return View(productDtos);
         }
 
+        public async Task<IActionResult> ProductDetails(int productId) 
+        {
+            Product product = await _unitOfWork.productRepository.GetAsync(x=>x.ProductId == productId);
+
+            ProductDto productDto = _mapper.Map<ProductDto>(product);
+
+            return View(productDto);
+        }
         public IActionResult Privacy()
         {
             return View();
