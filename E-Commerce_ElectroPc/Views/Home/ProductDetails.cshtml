@@ -4,22 +4,76 @@
     ViewData["Title"] = "Product Details";
 }
 
-<h2>@Model.Name</h2>
 
-<div>
-    <dl class="row">
+<section class="py-5">
+    <div class="container">
+
+        <div class="col-lg-2 col-sm-4 col-4 float-start" target="_blank">
+                <img src="@Model.ImageUrl"/>
+        </div>
         
+        <div class="row gx-5">
+            <aside class="col-lg-6">
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-light">
+                        More about product
+                    </h4>
 
-        <dt class="col-sm-2">Name</dt>
-        <dd class="col-sm-10">@Model.Name</dd>
+                    <div class="mb-3">
+                        <span class="h5">$75.00</span>
+                        <span class="text-muted">/per box</span>
+                    </div>
+                    <div class="row">
+                        <dt class="col-3">Name</dt>
+                        <dd class="col-9">@Model.Name</dd>
 
-        <dt class="col-sm-2">Processor</dt>
-        <dd class="col-sm-10">@Model.Processor</dd>
+                        <dt class="col-3">Brand</dt>
+                        <dd class="col-9">@Model.Brand</dd>
 
-        <dt class="col-sm-2">Brand</dt>
-        <dd class="col-sm-10">@Model.Brand</dd>
+                        <dt class="col-3">Processor</dt>
+                        <dd class="col-9">@Model.Processor</dd>
 
-    </dl>
-</div>
+                        <dt class="col-3">RamSizeGB</dt>
+                        <dd class="col-9">@Model.RamSizeGB</dd>
 
+                        <dt class="col-3">StorageType</dt>
+                        <dd class="col-9">@Model.StorageType</dd>
+
+                        <dt class="col-3">StorageCapacityGB</dt>
+                        <dd class="col-9">@Model.StorageCapacityGB</dd>
+
+                        <dt class="col-3">DisplaySizeInches</dt>
+                        <dd class="col-9">@Model.DisplaySizeInches</dd>
+
+                        <dt class="col-3">DisplayResolution</dt>
+                        <dd class="col-9">@Model.DisplayResolution</dd>
+
+                        <dt class="col-3">GraphicsCard</dt>
+                        <dd class="col-9">@Model.GraphicsCard</dd>
+
+                        <dt class="col-3">OperatingSystem</dt>
+                        <dd class="col-9">@Model.OperatingSystem</dd>
+
+                        <dt class="col-3">BatteryLifeHours</dt>
+                        <dd class="col-9">@Model.BatteryLifeHours</dd>
+
+                        <dt class="col-3">WeightKg</dt>
+                        <dd class="col-9">@Model.WeightKg</dd>
+
+                        <dt class="col-3">Dimensions</dt>
+                        <dd class="col-9">@Model.Dimensions</dd>
+
+                      
+                    </div>
+
+                    <hr />
+
+                    <a asp-controller="" asp-action="" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
 
