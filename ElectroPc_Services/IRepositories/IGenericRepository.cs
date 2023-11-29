@@ -12,6 +12,6 @@ namespace ElectroPc_Services.IRepositories
         Task<IEnumerable<T>> GetAllAsync(bool tracked = true);
         Task<T> GetAsync(Expression<Func<T, bool>>? filter = null, bool tracked = true);
         Task CreateAsync(T entity);
-        void Remove(T entity);
+        Task Remove(T entity);
     }
 }

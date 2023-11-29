@@ -9,6 +9,6 @@ namespace ElectroPc_Services.IRepositories
 {
     public interface IProductRepository : IGenericRepository<Product>
     {
-        void Update(Product product);
+        Task Update(Product product);
     }
 }

@@ -3,6 +3,7 @@ using ElectroPc_Models;
 using ElectroPc_Models.Dtos;
 using ElectroPc_Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace E_Commerce_ElectroPc.Controllers
 {
@@ -26,5 +27,22 @@ namespace E_Commerce_ElectroPc.Controllers
             return View(productDtos);
         }
 
+        [HttpGet]
+        public IActionResult Create() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductDto productDto)
+        {
+            if (ModelState.IsValid) 
+            {
+                Product product = _mapper.Map<Product>(productDto);
+                await _unitOfWork.productRepository.CreateAsync(product);
+                
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
