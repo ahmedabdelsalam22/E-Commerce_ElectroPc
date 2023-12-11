@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectroPc_Models", "Electro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectroPc_Utility", "ElectroPc_Utility\ElectroPc_Utility.csproj", "{6B41F45F-0A62-45ED-A667-C072798AA7FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPc_DataAccess", "ElectroPc_DataAccess\ElectroPc_DataAccess.csproj", "{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectroPc_DataAccess", "ElectroPc_DataAccess\ElectroPc_DataAccess.csproj", "{9E4E67C3-7FAF-4A8B-9FCE-89EEE2270085}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPc_Services", "ElectroPc_Services\ElectroPc_Services.csproj", "{3360FE07-4E82-4909-B4C8-C0D33DE17868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectroPc_Services", "ElectroPc_Services\ElectroPc_Services.csproj", "{3360FE07-4E82-4909-B4C8-C0D33DE17868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
